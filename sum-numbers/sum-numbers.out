@@ -1,0 +1,78 @@
+-----------------------------
+This job is allocated on 8 cpu(s)
+Job is running on node(s):
+wn273.scope.unina.it
+wn274.scope.unina.it
+wn275.scope.unina.it
+wn276.scope.unina.it
+wn277.scope.unina.it
+wn278.scope.unina.it
+wn279.scope.unina.it
+wn280.scope.unina.it
+-----------------------------
+PBS: qsub is running on ui-studenti.scope.unina.it
+PBS: originating queue is studenti
+PBS: executing queue is studenti
+PBS: working directory is /homes/DMA/PDC/2020/SCRFNC00B/sum-numbers
+PBS: execution mode is PBS_BATCH
+PBS: job identifier is 4014703.torque02.scope.unina.it
+PBS: job name is sum-numbers.pbs
+PBS: node file is /var/spool/pbs/aux//4014703.torque02.scope.unina.it
+PBS: current home directory is /homes/DMA/PDC/2020/SCRFNC00B
+------------------------------
+--------- OUTPUT ------------
+[PID: 7/8] Processor initialization
+[PID: 4/8] Processor initialization
+[PID: 0/8] Processor initialization
+[PID 0] Generated numbers:
+	Elements 0 value is 35
+	Elements 1 value is 21
+	Elements 2 value is 69
+	Elements 3 value is 13
+	Elements 4 value is 46
+	Elements 5 value is 7
+	Elements 6 value is 60
+	Elements 7 value is 0
+	Elements 8 value is 96
+	Elements 9 value is 7
+	Elements 10 value is 95
+	Elements 11 value is 75
+	Elements 12 value is 50
+	Elements 13 value is 18
+	Elements 14 value is 62
+	Elements 15 value is 44
+	Elements 16 value is 40
+	Elements 17 value is 64
+	Elements 18 value is 10
+	Elements 19 value is 75
+	Elements 20 value is 78
+	Elements 21 value is 54
+	Elements 22 value is 86
+	Elements 23 value is 36
+	Elements 24 value is 43
+	Elements 25 value is 32
+	Elements 26 value is 2
+	Elements 27 value is 61
+	Elements 28 value is 85
+	Elements 29 value is 56
+[PID: 2/8] Processor initialization
+[PID: 1/8] Processor initialization
+[PID: 5/8] Processor initialization
+[PID: 6/8] Processor initialization
+[PID: 3/8] Processor initialization
+---------- PROBLEM AND RESOLUTION CONFIGURATION ----------
+-Input type: Randomically generated
+-Number of elements: 30
+-Strategy type: Second strategy
+
+[PID 7] Local sum: 202
+[PID 0] Local sum: 138
+[PID 1] Local sum: 113
+[PID 4] Local sum: 189
+[PID 2] Local sum: 273
+[PID 3] Local sum: 174
+[PID 6] Local sum: 77
+[PID 5] Local sum: 254
+
+[PID 0] *** RESULT *** Total sum value is 1420
+
