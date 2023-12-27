@@ -1,4 +1,0 @@
-In file included from /homes/DMA/PDC/2020/SCRFNC00B/sum-numbers/sum-numbers.c:1:
-/homes/DMA/PDC/2020/SCRFNC00B/sum-numbers/sum-numbers.h:59:34: warning: no newline at end of file
-/homes/DMA/PDC/2020/SCRFNC00B/sum-numbers/sum-numbers.c: In function ‘checkStrategy’:
-/homes/DMA/PDC/2020/SCRFNC00B/sum-numbers/sum-numbers.c:232: warning: incompatible implicit declaration of built-in function ‘log2’

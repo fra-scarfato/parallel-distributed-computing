@@ -254,7 +254,7 @@ void checkStrategy(Utils* utilsForProcessor) {
 void distributeData(Utils* utilsForProcessor, int nElements, int numbers[]) {
     int rest, i, tag;
     MPI_Status mpiStatus;
-    
+
     //------ Distribuzione dei dati ----------
     utilsForProcessor->nElementsInOneprocessor = nElements / utilsForProcessor->nProcessors; //Ogni processore calcola quanti elementi deve memorizzare
     rest = nElements % utilsForProcessor->nProcessors;

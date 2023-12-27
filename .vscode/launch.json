@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "mpicc - Build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/${fileBasenameNoExtension}",
+        "args": [
+            "-np",
+            "4",
+            "${fileDirname}/${fileBasenameNoExtension}",
+            "-i",
+            "debug",
+            "-n",
+            "9",
+            "-s",
+            "1",
+        ],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "preLaunchTask": "mpicc build active file"
+      }
+    ]
+  }
