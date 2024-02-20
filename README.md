@@ -3,7 +3,7 @@ Project for "Parallel Distrubted Computing" course (2023-2024) of the Computer S
 
 # Projects
 In this repository, there are 3 projects:
-* Sum numbers on MIMD rchitecture with distributed memory ([Doc](https://github.com/fra-scarfato/Parallel-Distributed-Computing/blob/main/sum-numbers-distributed/Documentazione.pdf))
+* Sum numbers on MIMD architecture with distributed memory ([Doc](https://github.com/fra-scarfato/Parallel-Distributed-Computing/blob/main/sum-numbers-distributed/Documentazione.pdf))
 * Sum numbers on MIMD architecture with shared memory
 * Matrix - vector product on MIMD architecture with shared memory ([Doc](https://github.com/fra-scarfato/Parallel-Distributed-Computing/blob/main/matrix-vector-shared/Documentazione.pdf))
 * Matrix - matrix product on MIMD architecture with distributed memory ([Doc](https://github.com/fra-scarfato/Parallel-Distributed-Computing/blob/main/matrix-matrix-distributed/Documentazione.pdf))
