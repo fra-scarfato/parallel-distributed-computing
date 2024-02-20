@@ -1,4 +1,4 @@
-# Parallel-Distributed-Computing
+# Parallel Distributed Computing
 Project for "Parallel Distrubted Computing" course (2023-2024) of the Computer Science Degree in University of Naples "Federico II". Implemented by **Francesco Scarfato**.
 
 # Projects
