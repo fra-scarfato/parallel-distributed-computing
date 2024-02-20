@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -q studenti
+#PBS -l nodes=1:ppn=8
+#PBS -o matrix-seq.out      
+#PBS -e matrix-seq.err
+
+sort -u $PBS_NODEFILE > hostlist
+
+PBS_O_WORKDIR=$PBS_O_HOME/matrix-matrix
+
+gcc -lm -o $PBS_O_WORKDIR/matrix-seq $PBS_O_WORKDIR/matrix-seq.c
+$PBS_O_WORKDIR/matrix-seq

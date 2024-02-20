@@ -1,0 +1,52 @@
+---- Matrix A ----
+|2||2||7||3|
+|5||7||5||5|
+|3||5||7||3|
+|5||7||9||5|
+---- Matrix B ----
+|4||3||7||3|
+|2||2||5||4|
+|0||4||6||9|
+|8||2||7||2|
+Local block of A on rank 0 is:
+|2||2|
+|5||7|
+Local block of B on rank 0 is:
+|4||3|
+|2||2|
+Local block of A on rank 2 is:
+|3||5|
+|5||7|
+Local block of B on rank 2 is:
+|0||4|
+|8||2|
+Local block of A on rank 1 is:
+|7||3|
+|5||5|
+Local block of B on rank 1 is:
+|7||3|
+|5||4|
+Local block of A on rank 3 is:
+|7||3|
+|9||5|
+Local block of B on rank 3 is:
+|6||9|
+|7||2|
+Local block of result on rank 0 is:
+|36||44|
+|74||59|
+Local block of result on rank 1 is:
+|87||83|
+|135||98|
+Local block of result on rank 2 is:
+|46||53|
+|74||75|
+Local block of result on rank 3 is:
+|109||98|
+|159||134|
+---- RESULT ----
+|36||44||87||83|
+|74||59||135||98|
+|46||53||109||98|
+|74||75||159||134|
+0.00018

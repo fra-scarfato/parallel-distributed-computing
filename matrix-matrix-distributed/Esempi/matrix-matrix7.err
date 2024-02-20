@@ -1,0 +1,20 @@
+Matrix dimension isn't multiple of processors number
+: Success
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 2 in communicator MPI_COMM_WORLD 
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+Matrix dimension isn't multiple of processors number
+: Success
+--------------------------------------------------------------------------
+mpiexec has exited due to process rank 2 with PID 13601 on
+node wn275.scope.unina.it exiting without calling "finalize". This may
+have caused other processes in the application to be
+terminated by signals sent by mpiexec (as reported here).
+--------------------------------------------------------------------------
+[wn280.scope.unina.it:23747] 1 more process has sent help message help-mpi-api.txt / mpi-abort
+[wn280.scope.unina.it:23747] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

@@ -1,0 +1,62 @@
+#!/bin/bash
+
+#Da chiamare con vari input
+#--------------------------------------------------------------#
+#                                                              #
+#   qsub -v PROJECT="<name>",nELEM=<integer> script.pbs        #
+#                                                              #
+#                  @FrancescoScarfato                          #               
+#--------------------------------------------------------------#
+
+#PBS -q studenti
+#PBS -l nodes=8:ppn=8
+#PBS -o $PROJECT$nELEM.out
+#PBS -e $PROJECT$nELEM.err
+
+sort -u $PBS_NODEFILE > hostlist
+
+PBS_O_WORKDIR=$PBS_O_HOME/$PROJECT
+
+/usr/lib64/openmpi/1.4-gcc/bin/mpicc -lm -o $PBS_O_WORKDIR/$PROJECT $PBS_O_WORKDIR/$PROJECT.c
+
+#Per gestire le float operation
+export LC_NUMERIC=C 
+
+#Tempo impiegato dall'algoritmo con 1 processore
+t1=0
+efficiency=0
+
+printf '%-20s%-20s%-15s%-15s\n' 'Processors number' 'Time (average)' 'Speed-up' 'Efficiency'
+
+#Incrementa il numero processori
+for p in 1 4
+do
+    sum=0 #Somma di 10 tempi
+    for (( i=0; i<10; i++ ))
+    do
+        # Prende il valore del tempo totale di un esecuzione
+        tmp=$(/usr/lib64/openmpi/1.4-gcc/bin/mpiexec -machinefile hostlist -np $p $PBS_O_WORKDIR/$PROJECT -d $nELEM)
+        #echo $tmp
+        #Somma dei 10 valori
+        sum=$(echo "$sum $tmp" | awk '{printf("%.5f", $1+$2)}')
+    done
+
+    #echo Somma: $sum
+    average=$(echo "$sum" | awk '{printf("%.6f", $1/10)}')
+    #echo Media: $average
+    
+    #Se il processore è singolo allora è inutile calcolare speed-up e efficienza
+    if [ $p -eq 1 ]; then
+        #T(1) settato quando ottengo il tempo di 1 prcoessore
+        t1=$average
+        speedup=1
+        efficiency=1
+    else
+        tp=$average
+        #Calcolo speed-up T(1)/T(P)
+        speedup=$(echo "$t1 $tp" | awk '{printf("%.6f", $1/$2)}')
+        #Calcolo efficienza S(P)/P
+        efficiency=$(echo "$speedup $p" | awk '{printf("%.6f", $1/$2)}')
+    fi
+    printf "%-20d%-20.5f%-15.5f%-15.5f\n" "$p" "$average" "$speedup" "$efficiency"
+done

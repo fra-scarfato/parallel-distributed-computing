@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Da chiamare con vari input
+#--------------------------------------------------------------#
+#                                                              #
+#   qsub -v PROJECT="<name>",nELEM=<integer>,p=<nProc>         #
+#                                            script.pbs        #
+#                                                              #
+#                  @FrancescoScarfato                          #               
+#--------------------------------------------------------------#
+
+#PBS -q studenti
+#PBS -l nodes=8:ppn=8
+#PBS -o $PROJECT$nELEM.out      
+#PBS -e $PROJECT$nELEM.err
+
+sort -u $PBS_NODEFILE > hostlist
+
+PBS_O_WORKDIR=$PBS_O_HOME/$PROJECT
+
+/usr/lib64/openmpi/1.4-gcc/bin/mpicc -lm -o $PBS_O_WORKDIR/$PROJECT $PBS_O_WORKDIR/$PROJECT.c
+/usr/lib64/openmpi/1.4-gcc/bin/mpiexec -machinefile hostlist -np $p $PBS_O_WORKDIR/$PROJECT -d $nELEM -s
